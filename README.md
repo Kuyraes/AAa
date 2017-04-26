@@ -55,12 +55,12 @@ conditions :
 		# Initial simulation time
 		time = 0.0
 		#Loop for nt time steps of dt seconds.
-	for n in range(nt):
-		time += dt
-		sim.advance(time)
-		tim[n] = time
-		temp_cas[n] = r.T
-		mfrac_cas[j][:] = r.thermo.Y
+		for n in range(nt):
+			time += dt
+			sim.advance(time)
+			tim[n] = time
+			temp_cas[n] = r.T
+			mfrac_cas[j][:] = r.thermo.Y
 #################################################################
 # Catch the autoignition timings
 #################################################################
