@@ -51,7 +51,7 @@ conditions :
 		#Create the ideal batch reactor
 		r =ct.IdealGasReactor(gas)
 		# Now create a reactor network consisting of the single batch reactor
-		sim = ...
+		sim = ct.ReactorNet([r])
 		# Initial simulation time
 		time = 0.0
 		#Loop for nt time steps of dt seconds.
