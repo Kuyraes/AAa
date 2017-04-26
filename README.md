@@ -60,7 +60,7 @@ conditions :
 			sim.advance(time)
 			tim[n] = time
 			temp_cas[n] = r.T
-			mfrac_cas[j][:] = r.thermo.Y
+		mfrac_cas[j][:] = r.thermo.Y
 #################################################################
 # Catch the autoignition timings
 #################################################################
