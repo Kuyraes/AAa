@@ -5,27 +5,33 @@
 # initial temperature
 #
 ###############################################################
+	
 	import sys
 	import numpy as np
 	from cantera import *
 	import cantera as ct
 #################################################################
 #Mechanism used for the process
+	
 	gas = Solution('gri30.cti')
 #Initial temperature, Pressure and stoichiometry
+	
 	gas.TPX = 1250, one_atm, 'CH4:0.5,O2:1,N2:3.76'
 	Tmin = 0.65
 	Tmax = 0.85
 	npoints = 11
 #Storage
 #Temperature storage variables
+	
 	Ti = np.zeros(npoints,'d')
 	Ti2 = np.zeros(npoints,'d')
 #The initial storage variable become case dependent
+	
 	tim = np.zeros(nt,'d')
 	temp_cas = np.zeros(nt,'d')
 	dtemp_cas = np.zeros(nt-1,'d')
 #Additional storage variables are needed to differentiate each case
+	
 	Autoignition_cas = np.zeros(npoints,'d')
 	FinalTemp_cas = np.zeros(npoints,'d')
 	mfrac_cas = np.zeros([npoints,gas.n_species],'d')
@@ -33,6 +39,7 @@ Note that all storage variables now become storage vectors, storage vectors are 
 etc. You can remove the rest of the script, as we will now begin the loop over the several initial
 conditions :
 #Loop over initial conditions
+	
 	for j in range(npoints):
 		Ti2[j] = Tmin + (Tmax - Tmin)*j/(npoints - 1)
 		Ti[j] = 1000/Ti2[j]
@@ -91,5 +98,6 @@ conditions :
 	bar',fontsize=22,horizontalalignment='center')
 	axis([0.60,0.90,0.0,100.0])
 	grid()
-#show()
+#show
+
 	savefig('Phi-1_P-1_Trange_UV.png', bbox_inches='tight')
