@@ -17,6 +17,9 @@
 #Initial temperature, Pressure and stoichiometry
 	
 	gas.TPX = 1250, one_atm, 'CH4:0.5,O2:1,N2:3.76'
+	#Specify the number of time steps and the time step size
+	nt = 100000
+	dt = 1.e-6 #s
 	Tmin = 0.65
 	Tmax = 0.85
 	npoints = 11
