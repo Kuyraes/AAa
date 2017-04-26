@@ -49,7 +49,7 @@ conditions :
 		#Set gas state, always at stoichiometry
 		gas.TPX = Ti[j], one_atm, 'CH4:0.5,O2:1,N2:3.76'
 		#Create the ideal batch reactor
-		r = ...
+		r =ct.IdealGasReactor(gas)
 		# Now create a reactor network consisting of the single batch reactor
 		sim = ...
 		# Initial simulation time
